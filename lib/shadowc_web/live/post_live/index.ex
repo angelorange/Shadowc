@@ -42,11 +42,11 @@ defmodule ShadowcWeb.PostLive.Index do
     {:noreply, assign(socket, :posts, list_posts())}
   end
 
-  defp handle_info({:post_created, post}, socket) do
+  def handle_info({:post_created, post}, socket) do
     {:noreply, update(socket, :posts, fn posts -> [post | posts] end)}
   end
 
-  defp handle_info({:post_updated, post}, socket) do
+  def handle_info({:post_updated, post}, socket) do
     {:noreply, update(socket, :posts, fn posts -> [post | posts] end)}
   end
 
